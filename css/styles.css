@@ -1,0 +1,61 @@
+:root{
+  --brand:#0b5eb8;
+  --brand-900:#0a4590;
+  --gold:#c8a86b;
+}
+.container{
+  max-width: 1100px;
+}
+.pattern-bg{
+  background-image: radial-gradient(rgba(12,69,150,0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.herb-bg{
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* 平滑滚动 */
+html{
+  scroll-behavior: smooth;
+}
+
+/* 导航链接样式 */
+.nav-link{
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-link::after{
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after{
+  width: 100%;
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  /* 确保容器内边距 */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* 新闻卡片标题行高优化 */
+  .line-clamp-2 {
+    line-height: 1.4;
+  }
+  
+  /* 防止长文本溢出 */
+  h1, h2, h3 {
+    word-break: break-word;
+  }
+}
