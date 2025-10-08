@@ -9,6 +9,8 @@
   <!-- AOS (scroll animations) -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -18,8 +20,8 @@
     <div class="container mx-auto flex items-center justify-between py-2 px-4">
       <div class="opacity-90 text-xs sm:text-sm">湖南省中医药研究院 · 中药创新药物研究所</div>
       <div class="space-x-2 sm:space-x-4 flex opacity-90 text-xs sm:text-sm">
-        <a href="#contact" class="hover:underline whitespace-nowrap">联系</a>
-        <a href="https://www.hnsacm.com/" target="_blank" class="hover:underline whitespace-nowrap">主站</a>
+        <a href="#contact" class="hover:underline whitespace-nowrap">联系我们</a>
+        <a href="https://www.hnsacm.com/" target="_blank" class="hover:underline whitespace-nowrap">研究院网站</a>
       </div>
     </div>
   </div>
@@ -28,13 +30,13 @@
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
     <div class="container mx-auto px-4 flex items-center justify-between py-3">
       <div class="flex items-center space-x-2 sm:space-x-3">
-        <div class="w-9 h-9 rounded-full bg-[var(--brand)] grid place-items-center text-white font-semibold text-sm sm:text-base">研</div>
+        <img src="images/logo.png" alt="logo" class="w-9 h-9 object-contain" />
         <div class="leading-tight">
           <div class="font-bold text-[var(--brand-900)] text-sm sm:text-base">中药创新药物研究所</div>
           <div class="text-xs text-slate-500 hidden sm:block">Institute of Innovative Chinese Medicines</div>
         </div>
       </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
+      <nav class="hidden md:flex items-center gap-6 text-base">
         <a href="#about" class="nav-link hover:text-[var(--brand)]">所况介绍</a>
         <a href="#news" class="nav-link hover:text-[var(--brand)]">新闻动态</a>
         <a href="#services" class="nav-link hover:text-[var(--brand)]">主要业务</a>
@@ -48,7 +50,7 @@
       </button>
     </div>
     <div id="mobileNav" class="md:hidden hidden border-t border-slate-200 bg-white">
-      <div class="px-4 py-3 grid gap-3 text-sm">
+      <div class="px-4 py-3 grid gap-3 text-base">
         <a href="#about" class="hover:text-[var(--brand)]">所况介绍</a>
         <a href="#news" class="hover:text-[var(--brand)]">新闻动态</a>
         <a href="#services" class="hover:text-[var(--brand)]">主要业务</a>
@@ -201,23 +203,247 @@
   <!-- Services -->
   <section id="services" class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--brand-900)] mb-8">主要业务</h2>
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="p-5 rounded-2xl border shadow-sm bg-white" data-aos="fade-up">
-          <div class="text-sm font-semibold">中药新药研发</div>
-          <p class="text-sm text-slate-600 mt-2">名医名方转化、1.1类中药探索、临床价值导向研究。</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--brand-900)] mb-3 text-center">主要业务</h2>
+      <p class="text-center text-slate-600 mb-10">立足中医药传承创新，构建基础研究与产业转化双轮驱动体系</p>
+      
+      <!-- 基础研究 -->
+      <div class="mb-10" data-aos="fade-up">
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 md:p-8 shadow-lg border-2 border-[var(--brand-200)]">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-[var(--brand)] grid place-items-center text-white font-bold text-xl mr-4">一</div>
+            <h3 class="text-2xl font-bold text-[var(--brand-900)]">基础研究</h3>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- 1. 中药新药创制 -->
+            <div class="bg-white/95 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-start mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center text-sm font-bold mr-3 flex-shrink-0">1</div>
+                <div class="font-bold text-[var(--brand-900)] text-base">中药新药创制及大品种培育</div>
+              </div>
+              <ul class="text-sm text-slate-700 space-y-2 ml-11">
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>名医名方中药新药创制</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>中成药大品种</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>经典名方</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 2. 制剂关键技术 -->
+            <div class="bg-white/95 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-start mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center text-sm font-bold mr-3 flex-shrink-0">2</div>
+                <div class="font-bold text-[var(--brand-900)] text-base">制剂关键技术</div>
+              </div>
+              <ul class="text-sm text-slate-700 space-y-2 ml-11">
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>生粉灭菌</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>外用制剂透皮吸收</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>口服液体制剂澄清技术</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 3. 药效物质基础 -->
+            <div class="bg-white/95 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-start mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center text-sm font-bold mr-3 flex-shrink-0">3</div>
+                <div class="font-bold text-[var(--brand-900)] text-base">药效物质基础与作用机制</div>
+              </div>
+              <ul class="text-sm text-slate-700 space-y-2 ml-11">
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>中医证候动物模型建立</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>质量标志物/整合药理学</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>靶标/通路作用机制</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4. 质量标准 -->
+            <div class="bg-white/95 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-start mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center text-sm font-bold mr-3 flex-shrink-0">4</div>
+                <div class="font-bold text-[var(--brand-900)] text-base">质量标准</div>
+              </div>
+              <ul class="text-sm text-slate-700 space-y-2 ml-11">
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>湖南省药材标准</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>地方药材标准</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>质量标准提升</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 5. 中药炮制 -->
+            <div class="bg-white/95 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-start mb-3">
+                <div class="w-8 h-8 rounded-lg bg-[var(--brand)] text-white grid place-items-center text-sm font-bold mr-3 flex-shrink-0">5</div>
+                <div class="font-bold text-[var(--brand-900)] text-base">中药炮制传承与创新</div>
+              </div>
+              <ul class="text-sm text-slate-700 space-y-2 ml-11">
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>湖湘炮制特色挖掘</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>炮制机理</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-[var(--brand)] mr-2">▪</span>
+                  <span>精制饮片</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="p-5 rounded-2xl border shadow-sm bg-white" data-aos="fade-up" data-aos-delay="100">
-          <div class="text-sm font-semibold">医院制剂</div>
-          <p class="text-sm text-slate-600 mt-2">丸、颗粒、软膏、合剂、膏滋、贴膏等多剂型研发与备案。</p>
+      </div>
+
+      <!-- 横向开发 -->
+      <div data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 md:p-8 shadow-lg border-2 border-[var(--brand-200)]">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 rounded-full bg-[var(--brand)] grid place-items-center text-white font-bold text-xl mr-4">二</div>
+            <h3 class="text-2xl font-bold text-[var(--brand-900)]">横向开发</h3>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <!-- 左侧：中药新药与医院制剂 -->
+            <div class="space-y-4">
+              <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="font-bold text-[var(--brand-900)] mb-3 flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-[var(--brand)] mr-2"></span>
+                  名医名方挖掘
+                </div>
+                <p class="text-sm text-slate-600 ml-4">深度挖掘湖湘名医经验方，转化为现代中药产品</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="font-bold text-[var(--brand-900)] mb-3 flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-[var(--brand)] mr-2"></span>
+                  中药新药研发
+                </div>
+                <p class="text-sm text-slate-600 ml-4">名医名方向新药转化，1.1类创新药物研发</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="font-bold text-[var(--brand-900)] mb-3 flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-[var(--brand)] mr-2"></span>
+                  已上市中成药大品种培育
+                </div>
+                <p class="text-sm text-slate-600 ml-4">二次开发与质量提升，打造市场优势品种</p>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div class="font-bold text-[var(--brand-900)] mb-3 flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-[var(--brand)] mr-2"></span>
+                  医院制剂研发
+                </div>
+                <div class="ml-4">
+                  <p class="text-sm text-slate-700 mb-2">涵盖多种剂型：</p>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">丸剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">颗粒剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">软膏剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">合剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">膏滋</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">贴膏剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">散剂</span>
+                    <span class="text-xs px-2 py-1 bg-[var(--brand-50)] text-[var(--brand-900)] rounded">片剂</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 右侧：大健康产品 -->
+            <div class="space-y-4">
+              <div class="bg-gradient-to-br from-[var(--brand-50)] to-white rounded-xl p-5 shadow-sm">
+                <div class="font-bold text-[var(--brand-900)] mb-4 text-lg flex items-center">
+                  <span class="w-2 h-2 rounded-full bg-[var(--brand)] mr-2"></span>
+                  大健康产品注册备案与转化
+                </div>
+                
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 rounded bg-[var(--brand)] text-white text-xs grid place-items-center font-bold mr-3 flex-shrink-0 mt-0.5">食</div>
+                    <div>
+                      <div class="font-semibold text-[var(--brand-900)] text-sm mb-1">食品类</div>
+                      <p class="text-xs text-slate-600">药食同源食品、功能性食品、特殊膳食</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 rounded bg-[var(--brand)] text-white text-xs grid place-items-center font-bold mr-3 flex-shrink-0 mt-0.5">保</div>
+                    <div>
+                      <div class="font-semibold text-[var(--brand-900)] text-sm mb-1">保健食品</div>
+                      <p class="text-xs text-slate-600">国家注册备案，功能性保健产品研发</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 rounded bg-[var(--brand)] text-white text-xs grid place-items-center font-bold mr-3 flex-shrink-0 mt-0.5">妆</div>
+                    <div>
+                      <div class="font-semibold text-[var(--brand-900)] text-sm mb-1">化妆品</div>
+                      <p class="text-xs text-slate-600">中药特色化妆品开发与注册</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start">
+                    <div class="w-6 h-6 rounded bg-[var(--brand)] text-white text-xs grid place-items-center font-bold mr-3 flex-shrink-0 mt-0.5">械</div>
+                    <div>
+                      <div class="font-semibold text-[var(--brand-900)] text-sm mb-1">医疗器械</div>
+                      <p class="text-xs text-slate-600">中医特色器械、健康管理设备</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-xl p-5 shadow-sm">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-[var(--brand-900)] mb-2">全链条服务</div>
+                  <p class="text-sm text-slate-600 mb-4">从研发到上市的一站式解决方案</p>
+                  <div class="flex items-center justify-center text-xs text-slate-600">
+                    <span class="px-3 py-1 bg-slate-100 rounded">配方设计</span>
+                    <span class="mx-2">→</span>
+                    <span class="px-3 py-1 bg-slate-100 rounded">工艺开发</span>
+                    <span class="mx-2">→</span>
+                    <span class="px-3 py-1 bg-slate-100 rounded">质量研究</span>
+                    <span class="mx-2">→</span>
+                    <span class="px-3 py-1 bg-slate-100 rounded">注册申报</span>
+                  </div>
+                </div>
+              </div>
         </div>
-        <div class="p-5 rounded-2xl border shadow-sm bg-white" data-aos="fade-up" data-aos-delay="200">
-          <div class="text-sm font-semibold">大健康与药食同源</div>
-          <p class="text-sm text-slate-600 mt-2">保健食品、功能性食品、化妆品与器械的注册与转化。</p>
         </div>
-        <div class="p-5 rounded-2xl border shadow-sm bg-white" data-aos="fade-up" data-aos-delay="300">
-          <div class="text-sm font-semibold">标准与质量</div>
-          <p class="text-sm text-slate-600 mt-2">地方标准、质量标志物、可追溯体系与监管科学研究。</p>
         </div>
       </div>
     </div>
@@ -229,41 +455,51 @@
       <h2 class="text-2xl md:text-3xl font-bold text-[var(--brand-900)] mb-8">创新平台</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Platform Card 1 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border" data-aos="zoom-in">
-          <img src="images/platform-01.png" class="h-72 w-full object-cover" alt="芙蓉实验室中药制剂关键技术研究平台" />
-          <div class="p-5">
+        <div class="bg-white rounded-2xl shadow-sm border" data-aos="zoom-in">
+          <div class="p-4">
+            <img src="images/platform-01.png" class="h-48 w-full object-contain rounded-lg" alt="芙蓉实验室中药制剂关键技术研究平台" />
+          </div>
+          <div class="px-5 pb-5">
             <div class="font-semibold text-[var(--brand-900)]">芙蓉实验室中药制剂关键技术研究平台</div>
             <p class="text-sm text-slate-600 mt-2">生粉灭菌、透皮吸收、液体澄清等工艺与在线质量控制。</p>
           </div>
         </div>
         <!-- Platform Card 2 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border" data-aos="zoom-in" data-aos-delay="100">
-          <img src="images/platform-02.png" class="h-72 w-full object-cover" alt="中药新药研究与开发平台" />
-          <div class="p-5">
+        <div class="bg-white rounded-2xl shadow-sm border" data-aos="zoom-in" data-aos-delay="100">
+          <div class="p-4">
+            <img src="images/platform-02.png" class="h-48 w-full object-contain rounded-lg" alt="中药新药研究与开发平台" />
+          </div>
+          <div class="px-5 pb-5">
             <div class="font-semibold text-[var(--brand-900)]">中药新药研究与开发平台</div>
             <p class="text-sm text-slate-600 mt-2">处方优化、成药性研究、临床评价与注册支持。</p>
           </div>
         </div>
         <!-- Platform Card 3 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border" data-aos="zoom-in" data-aos-delay="200">
-          <img src="images/platform-03.png" class="h-72 w-full object-cover" alt="中部地区区域性营养创新平台——食药物质研究中心" />
-          <div class="p-5">
-            <div class="font-semibold text-[var(--brand-900)]">中部地区区域性营养创新平台——食药物质研究中心</div>
+        <div class="bg-white rounded-2xl shadow-sm border" data-aos="zoom-in" data-aos-delay="200">
+          <div class="p-4">
+            <img src="images/platform-03.png" class="h-48 w-full object-contain rounded-lg" alt="中部地区·区域性营养创新平台—食药物质研究与转化中心" />
+          </div>
+          <div class="px-5 pb-5">
+            <div class="font-semibold text-[var(--brand-900)]">中部地区·区域性营养创新平台—食药物质研究与转化中心</div>
             <p class="text-sm text-slate-600 mt-2">药食同源产品研发与营养健康创新。</p>
           </div>
         </div>
         <!-- Platform Card 4 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border" data-aos="zoom-in" data-aos-delay="300">
-          <img src="images/platform-04.png" class="h-72 w-full object-cover" alt="中药监管科学研究中心" />
-          <div class="p-5">
+        <div class="bg-white rounded-2xl shadow-sm border" data-aos="zoom-in" data-aos-delay="300">
+          <div class="p-4">
+            <img src="images/platform-04.png" class="h-48 w-full object-contain rounded-lg" alt="中药监管科学研究中心" />
+          </div>
+          <div class="px-5 pb-5">
             <div class="font-semibold text-[var(--brand-900)]">中药监管科学研究中心</div>
             <p class="text-sm text-slate-600 mt-2">质量标准制定、监管科学研究与政策支撑。</p>
           </div>
         </div>
         <!-- Platform Card 5 -->
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border" data-aos="zoom-in" data-aos-delay="400">
-          <img src="images/platform-05.png" class="h-72 w-full object-cover" alt="中医药名医名方制剂重点实验室" />
-          <div class="p-5">
+        <div class="bg-white rounded-2xl shadow-sm border" data-aos="zoom-in" data-aos-delay="400">
+          <div class="p-4">
+            <img src="images/platform-05.png" class="h-48 w-full object-contain rounded-lg" alt="中医药名医名方制剂重点实验室" />
+          </div>
+          <div class="px-5 pb-5">
             <div class="font-semibold text-[var(--brand-900)]">中医药名医名方制剂重点实验室</div>
             <p class="text-sm text-slate-600 mt-2">经典名方现代化与大品种培育。</p>
           </div>
@@ -303,25 +539,30 @@
         <h2 class="text-2xl md:text-3xl font-bold text-[var(--brand-900)]">联系我们</h2>
         <p class="mt-3 text-slate-700">欢迎产学研医用合作，共建联合研发与成果转化。</p>
         <div class="mt-6 space-y-2 text-sm text-slate-700">
-          <div>地址：湖南省长沙市（示例）</div>
+          <div>地址：湖南省长沙市岳麓区岳华路142号</div>
           <div>电话：0731-xxxx xxxx</div>
           <div>邮箱：icm@hnsacm.com</div>
         </div>
       </div>
-      <form class="bg-white rounded-2xl border p-4 sm:p-6 shadow-sm grid gap-4">
+      <form id="contactForm" class="bg-white rounded-2xl border p-4 sm:p-6 shadow-sm grid gap-4">
         <div>
-          <label class="text-sm font-medium">您的姓名</label>
-          <input class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请输入" />
+          <label class="text-sm font-medium">您的姓名 <span class="text-red-500">*</span></label>
+          <input type="text" name="from_name" id="from_name" required class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请输入您的姓名" />
         </div>
         <div>
-          <label class="text-sm font-medium">联系方式</label>
-          <input class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="邮箱或电话" />
+          <label class="text-sm font-medium">联系电话 <span class="text-red-500">*</span></label>
+          <input type="tel" name="from_phone" id="from_phone" required class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请输入您的电话" />
         </div>
         <div>
-          <label class="text-sm font-medium">合作意向</label>
-          <textarea rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请简要描述您的需求"></textarea>
+          <label class="text-sm font-medium">电子邮箱 <span class="text-red-500">*</span></label>
+          <input type="email" name="from_email" id="from_email" required class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请输入您的邮箱" />
         </div>
-        <button type="button" class="px-5 py-2.5 rounded-lg bg-[var(--brand)] text-white hover:bg-[var(--brand-900)] transition-colors">提交</button>
+        <div>
+          <label class="text-sm font-medium">留言内容 <span class="text-red-500">*</span></label>
+          <textarea name="message" id="message" required rows="4" class="mt-1 w-full border rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[var(--brand)]" placeholder="请简要描述您的需求或合作意向"></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="px-5 py-2.5 rounded-lg bg-[var(--brand)] text-white hover:bg-[var(--brand-900)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed">提交</button>
+        <div id="formMessage" class="text-sm text-center hidden"></div>
       </form>
     </div>
   </section>
