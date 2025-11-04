@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // 初始化联系表单
   initContactForm();
+  
+  // 初始化新闻模态框
+  initNewsModal();
 });
 
 /**
@@ -223,4 +226,49 @@ function initContactForm() {
       formMessage.classList.add('hidden');
     }, 5000);
   }
+}
+
+/**
+ * 初始化新闻模态框：处理"更多"按钮点击和关闭操作
+ */
+function initNewsModal() {
+  const newsModal = document.getElementById('newsModal');
+  const moreNewsBtn = document.getElementById('moreNewsBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  
+  if (!newsModal || !moreNewsBtn || !closeModalBtn) return;
+  
+  // 打开模态框
+  moreNewsBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    newsModal.classList.remove('hidden');
+    newsModal.classList.add('flex');
+    // 禁止页面滚动
+    document.body.style.overflow = 'hidden';
+  });
+  
+  // 关闭模态框
+  const closeModal = () => {
+    newsModal.classList.add('hidden');
+    newsModal.classList.remove('flex');
+    // 恢复页面滚动
+    document.body.style.overflow = '';
+  };
+  
+  // 点击关闭按钮
+  closeModalBtn.addEventListener('click', closeModal);
+  
+  // 点击模态框背景关闭
+  newsModal.addEventListener('click', (e) => {
+    if (e.target === newsModal) {
+      closeModal();
+    }
+  });
+  
+  // 按ESC键关闭
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !newsModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
 }

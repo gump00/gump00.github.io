@@ -160,43 +160,11 @@
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl md:text-3xl font-bold text-[var(--brand-900)]">新闻动态</h2>
-        <a href="#" class="text-sm text-[var(--brand)] hover:underline">更多</a>
+        <button id="moreNewsBtn" class="text-sm text-[var(--brand)] hover:underline">更多</button>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- News Card -->
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" onclick="window.location.href='news-detail-1.html'">
-          <img src="images/news-1.jpg" class="h-40 w-full object-cover" alt="news" />
-          <div class="p-4">
-            <h3 class="font-semibold line-clamp-2">中药创新药物研究所：守正创新 智启未来</h3>
-            <p class="text-sm text-slate-600 mt-1 line-clamp-2">构建"基础研究-技术攻关-成果转化-产业赋能"全链条创新体系，推动中药新药与大健康产品研发转化，为中医药高质量发展注入强劲动能。</p>
-            <div class="text-xs text-slate-500 mt-2">2025-04-08</div>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="window.location.href='news-detail-2.html'">
-          <img src="images/news-2.jpg" class="h-40 w-full object-cover" alt="news" />
-          <div class="p-4">
-            <h3 class="font-semibold line-clamp-2">我院3个项目入选湖南省2025年度第一批地方标准制定项目计划</h3>
-            <p class="text-sm text-slate-600 mt-1 line-clamp-2">莲香型白酒、黄精产地加工炮制一体化、虫白蜡等3个地方标准项目成功立项，为相关产业规范化发展提供关键支撑。</p>
-            <div class="text-xs text-slate-500 mt-2">2025-02-14</div>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="window.location.href='news-detail-3.html'">
-          <img src="images/news-3.jpg" class="h-40 w-full object-cover" alt="news" />
-          <div class="p-4">
-            <h3 class="font-semibold line-clamp-2">以科技赋能，助力益阳市木槿产业发展</h3>
-            <p class="text-sm text-slate-600 mt-1 line-clamp-2">《牡丹木槿花》地方标准正式发布，推动木槿产业标准化、规范化发展，助力资阳区5000亩木槿产业向高端化、智能化、绿色化方向迈进。</p>
-            <div class="text-xs text-slate-500 mt-2">2025-01-22</div>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='news-detail-4.html'">
-          <img src="images/news-4.png" class="h-40 w-full object-cover" alt="news" />
-          <div class="p-4">
-            <h3 class="font-semibold line-clamp-2">"中部地区·区域性营养创新平台食药物质研究与转化中心"正式成立并举办前沿论坛</h3>
-            <p class="text-sm text-slate-600 mt-1 line-clamp-2">7月5日，中部地区·区域性营养创新平台成立大会暨国民营养创新与产业发展论坛在长沙举行。会上，我院被授予"中部地区·区域性营养创新平台副会长单位"，并与湖南中医药大学共建"中部地区·区域性营养创新平台食药物质研究与转化中心"。</p>
-            <div class="text-xs text-slate-500 mt-2">2025-07-07</div>
-          </div>
-        </article>
-        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="400" onclick="window.location.href='news-detail-5.html'">
+        <!-- News Card 1 - 最新 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" onclick="window.location.href='news-detail-5.html'">
           <img src="images/news-5.jpg" class="h-40 w-full object-cover" alt="news" />
           <div class="p-4">
             <h3 class="font-semibold line-clamp-2">我院承办药食同源产业发展长沙大会，共绘银发健康蓝图</h3>
@@ -204,9 +172,109 @@
             <div class="text-xs text-slate-500 mt-2">2025-10-31</div>
           </div>
         </article>
+        <!-- News Card 2 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100" onclick="window.location.href='news-detail-4.html'">
+          <img src="images/news-4.png" class="h-40 w-full object-cover" alt="news" />
+          <div class="p-4">
+            <h3 class="font-semibold line-clamp-2">"中部地区·区域性营养创新平台食药物质研究与转化中心"正式成立并举办前沿论坛</h3>
+            <p class="text-sm text-slate-600 mt-1 line-clamp-2">7月5日，中部地区·区域性营养创新平台成立大会暨国民营养创新与产业发展论坛在长沙举行。会上，我院被授予"中部地区·区域性营养创新平台副会长单位"，并与湖南中医药大学共建"中部地区·区域性营养创新平台食药物质研究与转化中心"。</p>
+            <div class="text-xs text-slate-500 mt-2">2025-07-07</div>
+          </div>
+        </article>
+        <!-- News Card 3 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200" onclick="window.location.href='news-detail-1.html'">
+          <img src="images/news-1.jpg" class="h-40 w-full object-cover" alt="news" />
+          <div class="p-4">
+            <h3 class="font-semibold line-clamp-2">中药创新药物研究所：守正创新 智启未来</h3>
+            <p class="text-sm text-slate-600 mt-1 line-clamp-2">构建"基础研究-技术攻关-成果转化-产业赋能"全链条创新体系，推动中药新药与大健康产品研发转化，为中医药高质量发展注入强劲动能。</p>
+            <div class="text-xs text-slate-500 mt-2">2025-04-08</div>
+          </div>
+        </article>
+        <!-- News Card 4 -->
+        <article class="bg-white rounded-2xl overflow-hidden shadow-sm border hover:shadow-lg transition-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300" onclick="window.location.href='news-detail-2.html'">
+          <img src="images/news-2.jpg" class="h-40 w-full object-cover" alt="news" />
+          <div class="p-4">
+            <h3 class="font-semibold line-clamp-2">我院3个项目入选湖南省2025年度第一批地方标准制定项目计划</h3>
+            <p class="text-sm text-slate-600 mt-1 line-clamp-2">莲香型白酒、黄精产地加工炮制一体化、虫白蜡等3个地方标准项目成功立项，为相关产业规范化发展提供关键支撑。</p>
+            <div class="text-xs text-slate-500 mt-2">2025-02-14</div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
+
+  <!-- News Modal -->
+  <div id="newsModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+      <div class="flex items-center justify-between p-6 border-b">
+        <h3 class="text-2xl font-bold text-[var(--brand-900)]">全部新闻</h3>
+        <button id="closeModalBtn" class="text-slate-400 hover:text-slate-600 transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+        <div class="space-y-4">
+          <!-- News Item 1 -->
+          <a href="news-detail-5.html" class="block bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+            <div class="flex items-start gap-4">
+              <img src="images/news-5.jpg" class="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="news" />
+              <div class="flex-1">
+                <h4 class="font-semibold text-[var(--brand-900)] mb-1">我院承办药食同源产业发展长沙大会，共绘银发健康蓝图</h4>
+                <p class="text-sm text-slate-600 mb-2 line-clamp-2">10月31日，作为2025(首届)长沙银发产业博览会核心主题活动，药食同源产业发展长沙大会在红星国际会展中心成功举行。</p>
+                <div class="text-xs text-slate-500">📅 2025-10-31</div>
+              </div>
+            </div>
+          </a>
+          <!-- News Item 2 -->
+          <a href="news-detail-4.html" class="block bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+            <div class="flex items-start gap-4">
+              <img src="images/news-4.png" class="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="news" />
+              <div class="flex-1">
+                <h4 class="font-semibold text-[var(--brand-900)] mb-1">"中部地区·区域性营养创新平台食药物质研究与转化中心"正式成立并举办前沿论坛</h4>
+                <p class="text-sm text-slate-600 mb-2 line-clamp-2">7月5日，中部地区·区域性营养创新平台成立大会暨国民营养创新与产业发展论坛在长沙举行。</p>
+                <div class="text-xs text-slate-500">📅 2025-07-07</div>
+              </div>
+            </div>
+          </a>
+          <!-- News Item 3 -->
+          <a href="news-detail-1.html" class="block bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+            <div class="flex items-start gap-4">
+              <img src="images/news-1.jpg" class="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="news" />
+              <div class="flex-1">
+                <h4 class="font-semibold text-[var(--brand-900)] mb-1">中药创新药物研究所：守正创新 智启未来</h4>
+                <p class="text-sm text-slate-600 mb-2 line-clamp-2">构建"基础研究-技术攻关-成果转化-产业赋能"全链条创新体系，推动中药新药与大健康产品研发转化。</p>
+                <div class="text-xs text-slate-500">📅 2025-04-08</div>
+              </div>
+            </div>
+          </a>
+          <!-- News Item 4 -->
+          <a href="news-detail-2.html" class="block bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+            <div class="flex items-start gap-4">
+              <img src="images/news-2.jpg" class="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="news" />
+              <div class="flex-1">
+                <h4 class="font-semibold text-[var(--brand-900)] mb-1">我院3个项目入选湖南省2025年度第一批地方标准制定项目计划</h4>
+                <p class="text-sm text-slate-600 mb-2 line-clamp-2">莲香型白酒、黄精产地加工炮制一体化、虫白蜡等3个地方标准项目成功立项。</p>
+                <div class="text-xs text-slate-500">📅 2025-02-14</div>
+              </div>
+            </div>
+          </a>
+          <!-- News Item 5 -->
+          <a href="news-detail-3.html" class="block bg-slate-50 rounded-xl p-4 hover:bg-slate-100 transition-colors">
+            <div class="flex items-start gap-4">
+              <img src="images/news-3.jpg" class="w-24 h-24 object-cover rounded-lg flex-shrink-0" alt="news" />
+              <div class="flex-1">
+                <h4 class="font-semibold text-[var(--brand-900)] mb-1">以科技赋能，助力益阳市木槿产业发展</h4>
+                <p class="text-sm text-slate-600 mb-2 line-clamp-2">《牡丹木槿花》地方标准正式发布，推动木槿产业标准化、规范化发展。</p>
+                <div class="text-xs text-slate-500">📅 2025-01-22</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Services -->
   <section id="services" class="py-16">
